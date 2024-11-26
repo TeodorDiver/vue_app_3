@@ -24,7 +24,7 @@ export default {
   methods: {
     async fetchRates() {
   try {
-    const response = await axios.get('/api/scripts/XML_daily.asp'); // Используйте относительный путь
+    const response = await axios.get('/api/scripts/XML_daily.asp'); 
     const parser = new DOMParser();
     const xml = parser.parseFromString(response.data, 'text/xml');
 
@@ -38,14 +38,11 @@ export default {
 },
   },
   created() {
-  this.fetchRates(); // Запрашиваем данные сразу при создании компонента
+  this.fetchRates(); 
   setInterval(() => {
     this.currentDate = new Date().toLocaleString('ru-RU');
-  }, 1000); // Обновляем дату каждую секунду
+  }, 1000); 
 },
 };
 </script>
 
-<style scoped>
-/* Добавьте стили по вашему усмотрению */
-</style>
